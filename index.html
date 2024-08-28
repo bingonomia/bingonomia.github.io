@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('images/negromia.jpg'); /* Ruta a tu imagen */
+        background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+    }</style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="left-panel">
+            <div id="number-ball">
+                <span id="number-display">0</span>
+            </div>
+            <div id="recent-numbers">
+                <span class="recent-number">0</span>
+                <span class="recent-number">0</span>
+                <span class="recent-number">0</span>
+                <span class="recent-number">0</span>
+            </div>
+        </div>
+        <div id="numbers-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>#main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80vw; /* Ajusta el ancho según sea necesario */
+    max-width: 1200px; /* Ajusta el ancho máximo */
+    padding: 20px; /* Padding alrededor del contenedor principal */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del contenedor */
+}</style>
+<style>#left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Ajusta el ancho según sea necesario */
+}</style>
+<style>#number-ball {
+    position: left;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(0%);
+    width: 250px;
+    height: 250px;
+    margin-left: 1px;
+    margin-top: 200px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px; /* Tamaño del texto dentro de la bola */
+    box-shadow: 0 0 100px rgba(36, 197, 4, 0.856); /* Sombra para darle un efecto de profundidad */
+}</style>
+<style>#number-display {
+    font-size: 200px;
+}
+</style>
+<style>#recent-numbers {
+    display: flex;
+    justify-content: center;
+    right: 50%;
+    transform: translate(0%);
+    gap: 10px;
+    margin-top: 30px;
+    margin-left: 1px;
+}</style>
+<style>.recent-number {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(243, 199, 3);
+    border: 2px solid #000000;
+    border-radius: 10px;
+}</style>
+<style>#numbers-container {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(10, 50px);
+    grid-gap: 5px;
+}
+</style>
+<style>.number-button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #6dad06d3;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}</style>
+<style>.number-button.selected {
+    background-color: rgba(250, 225, 0, 0.856);
+    color: white;
+    cursor: not-allowed;
+}</style>
+<style>@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</style>
+<style>.animate {
+    animation: spin 1s linear;}
+    </style>
